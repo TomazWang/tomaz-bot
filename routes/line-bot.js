@@ -16,6 +16,18 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 
+
+router.post('/check_config', (req, res) => {
+    const verifyData = req.body.verify;
+
+    console.log(verifyData);
+    if(verifyData === 'tomaz'){
+        res.send(config);
+    }else{
+        res.send('not verified.');
+    }
+});
+
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 router.post('/callback', line.middleware(config), (req, res) => {
