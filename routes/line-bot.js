@@ -16,12 +16,9 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 
-
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
-
 router.post('/callback', line.middleware(config), (req, res) => {
-    console.log('get a post');
     Promise
         .all(req.body.events.map(handleEvent))
         .then((result) => res.json(result));
