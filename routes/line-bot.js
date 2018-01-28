@@ -21,7 +21,7 @@ const client = new line.Client(config);
 // about the middleware, please refer to doc
 router.post('/callback', line.middleware(config), (req, res) => {
     console.log('get a post');
-    console.log(`line-bot.js::24/post: event = ${event}`);
+    console.log(`line-bot.js::24/post: event = ${JSON.stringify(event)}`);
     Promise
         .all(req.body.events.map(handleEvent))
         .then((result) => res.json(result));

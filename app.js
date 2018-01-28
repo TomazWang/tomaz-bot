@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
 // error handler
 app.use(function (err, req, res, next) {
 
-    console.log(`app.js::39/err hander: ${err}`);
+    console.log(`app.js::39/err hander: ${JSON.stringify(err)}`);
 
     // set locals, only providing error in development
     res.locals.message = err.message;
