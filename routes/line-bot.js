@@ -17,20 +17,11 @@ const config = {
 const client = new line.Client(config);
 
 
-router.post('/check_config', (req, res) => {
-    const verifyData = req.body.verify;
-
-    console.log(verifyData);
-    if(verifyData === 'tomaz'){
-        res.send(config);
-    }else{
-        res.send('not verified.');
-    }
-});
-
 // register a webhook handler with middleware
 // about the middleware, please refer to doc
 router.post('/callback', line.middleware(config), (req, res) => {
+    console.log('get a post');
+    console.log(`line-bot.js::24/post: event = ${event}`);
     Promise
         .all(req.body.events.map(handleEvent))
         .then((result) => res.json(result));
@@ -38,6 +29,8 @@ router.post('/callback', line.middleware(config), (req, res) => {
 
 // event handler
 function handleEvent(event) {
+    console.log(`line-bot.js::32/handleEvent: event.type = ${event.type}`);
+
     if (event.type !== 'message' || event.message.type !== 'text') {
         // ignore non-text-message event for now.
         console.log('ignored!  not message.');

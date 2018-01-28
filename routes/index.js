@@ -9,8 +9,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/config', (req, res) => {
-  res.send(config);
-});
-
 module.exports = router;
