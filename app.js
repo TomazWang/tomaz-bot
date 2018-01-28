@@ -10,7 +10,7 @@ const logger = require('./logger');
 
 
 const index = require('./routes/index');
-const lineBot = require('./routes/line-bot');
+const lineBot = require('./line-bot/line-bot');
 
 const app = express();
 
