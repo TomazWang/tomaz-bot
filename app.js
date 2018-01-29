@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const logger = require('./logger');
 
 
-const index = require('./routes/index');
-const lineBot = require('./line-bot/line-bot');
+const index = require('./lib/routes/index');
+const lineBot = require('./lib/routes/line-bot');
 
 const app = express();
 
