@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 // app.use('/bots/line/callback', lineBot);
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use('/bots/line/', lineRounter);
 
 
