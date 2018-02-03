@@ -41,6 +41,26 @@ LineBot ------------------------+--[[action text]]----> IntentHandler ---> -+
    |                                                                        |
    +------------- <---------------------- <--------------------- <----------+
             (send reply)            (convert reply)         (handle intent)
+            
+            
+            
+            
+            
+
+         (/)
+      * ------>  index and doc 
+     /
+    /    (/bots)         (/bots/line)
+app ---------------*--------------------->  LineBot
+    \              | 
+     \             |     (/bots/<other>)
+      \             +-------------------->  OtherBot
+       \              
+        \
+         \   (/ai)       (/ai/webhook)
+          *-----------*------------------>  FullfillmentHandler
+
+            
 
 ```
 

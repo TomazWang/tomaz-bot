@@ -1,6 +1,6 @@
 const line = require("@line/bot-sdk");
-const logger = require("../../../logger");
-const lineConfig = require("../../config/line-config");
+const logger = require("../../logger");
+const lineConfig = require("../../lib/line/lineconfigs");
 
 
 // create LINE SDK client
