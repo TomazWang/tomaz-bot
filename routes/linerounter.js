@@ -1,7 +1,5 @@
 /**
  *
- * // TODO: @tomaz 30/01/2018: finish this file
- *
  * Line app should has these ability:
  *
  * - [x] Ability to add line app to route.
@@ -14,8 +12,7 @@
  * - [ ] Ability to handle response from line message api.
  *
  */
-'use strict';
-
+console.log('run line router');
 const express = require('express');
 const router = express.Router();
 
@@ -32,7 +29,7 @@ const lineConfig = require('../lib/line/lineconfigs');
 const LineBot = require('../lib/line/linebot');
 const lineBot = new LineBot(lineConfig);
 
-
+console.log('route post');
 router.post('/callback',
   // logging post
   (req, res, next) => {
