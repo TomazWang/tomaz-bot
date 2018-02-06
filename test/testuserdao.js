@@ -51,8 +51,6 @@ describe('addUser()', () => {
     // ACT
     userDao.addUser(user);
 
-    // ASSERT
-
   })
 
 
@@ -63,17 +61,16 @@ describe('getUserByLineId()', () => {
   it('should find me a user', () => {
     let result = userDao.getUserByLineId("sss line");
 
-    expect(result.then(user => user.name)).to.eventually.equal('Waka');
-
-
-    // expect(user.name).to.eventually.equal('waka');
-    // expect(user.lineProfile.userId).to.eventually.equal('ssss line');
+    return Promise.all([
+        expect(result).to.eventually.have.property('name').that.is.equal('Waka'),
+        expect(result).to.eventually.have.property('lineProfile').that.have.property('userId').that.is.equal('sss line')
+      ]
+    );
   });
 
   it('should return a false', () => {
-    userDao.getUserByLineId("ssss").then(user => {
-      expect(user).to.eventually.equal(false);
-    });
+    let result = userDao.getUserByLineId("ssss");
+    return expect(result).to.eventually.equal(false);
   });
 });
 
