@@ -1,7 +1,7 @@
 // testuserdao.js
 
 const {expect} = require('chai');
-const userdao = require('../lib/db/user/userdao');
+const userDao = require('../lib/db/user/userdao');
 const User = require('../lib/db/user/user');
 
 
@@ -14,7 +14,7 @@ describe('addUser()', () => {
     user.lineId = "ssss line";
 
     // ACT
-    userdao.addUser(user);
+    userDao.addUser(user);
 
     // ASSERT
 
@@ -27,7 +27,7 @@ describe('addUser()', () => {
 describe('getUserByLineId()', () => {
   it('should convert a ChatMessage to a LineMessage', () => {
 
-    userdao.getUserByLineId("ssss line").then(user => {
+    userDao.getUserByLineId("ssss line").then(user => {
       expect(user.lineId).to.be('ssss line');
       expect(user.name).to.be('waka');
     });
