@@ -12,3 +12,7 @@ deploy:
   app:
     master: tomaz-bot
     develop: tomaz-bot-dev
+
+notifications:
+  email:
+    - TomazWang.tw@gmail.com
