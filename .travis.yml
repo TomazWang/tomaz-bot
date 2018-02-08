@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '8'
+install:
+- npm install
+script:
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: IVTxqZmXG34So8q5Vi5n69otdBMOpTMN7bqpYjIUxAd8S0diesh0uhAJDJKS3PgXUnC/2G+7xVxDJtp6xQWVnXFjr1suhF+gX6Uy1HpGhxNcDOrWvBziaJp8Nqurdp70q1Hcxj5GcI2HzEZ/1CTb3jxGigXDkqztDsLlG5To+ifpy7uZBPYvU6Pw5wBN+flY8Z5bSSuuXdeWGYgiViFa1bRO5Qy5QfzKh6y4EnQjppkJ/0nFTWWY3NyfQuvjPvTMyTONhI0B6H2Bn8rh/gQCTvEOfORHFgpnwF0rHIO8UKG3J4Gw0+K67msmFk1mHY9+7dCTdhTq0tIbsNV9EjIMwOxTkcqVQLcnmMLYa2DdeuXJEGLzBQxIAPd4rfYSW8/BuEdsVWOtE+a1QRfGx1xmYCu+7v5nl9aIRxp9RnnLocZZVjPn9TQW6YG2wtNn1oWlILFsPAW/JT4xnYUF0ZUcbtjJ0y0N6GKW4lGnWnPta0n7CRxr5q9sYPOCvhowXkZYOB2S8nSL4anjVcGmY696in5vU/REZW2qCl3WtRcKh0fnJ73tzWIN47SGzcSzppzA48QM/AADJJrtQOFEEDlhXj8fZal1aTmdKYH5k9xsmD0L2qiLJTCFGB2taiBMIIVlCZyBdAbwgHdoZH+GkRl+siDD2EXCKAgPj9iShnywEUc=
+  app:
+    master: tomaz-bot
+    develop: tomaz-bot-dev
