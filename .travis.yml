@@ -15,4 +15,8 @@ deploy:
 
 notifications:
   email:
+    on_success: always
+    on_failure: always
     - TomazWang.tw@gmail.com
+    
+    
