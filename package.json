@@ -20,13 +20,16 @@
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5",
     "uuid": "latest",
+    "dotenv": "^4.0.0",
     "winston": "^3.0.0-rc1"
   },
   "devDependencies": {
     "babel-preset-airbnb": "^2.4.0",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
-    "dotenv": "^4.0.0",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "mocha": "^5.0.0",
     "node-fetch": "^2.0.0"
   }

@@ -3,8 +3,6 @@
 
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
-
 
 // add log
 const logger = require('./logger');
@@ -13,8 +11,6 @@ const logger = require('./logger');
 const index = require('./routes/index');
 // const lineBot = require('./routes/line-bot');
 const lineRounter = require('./routes/linerounter');
-
-const testRouter = require('./routes/testtouter');
 
 const app = express();
 
@@ -28,19 +24,17 @@ app.use('/', index);
 // app.use('/bots/line/callback', lineBot);
 // app.use(bodyParser.json());
 app.use('/bots/line/', lineRounter);
-app.use('/test/', testRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function (err, req, res, next) {
-
+app.use((err, req, res) => {
   logger.error('An error occurs:');
   logger.error(`req.body = ${JSON.stringify(req.body)}`);
   logger.error(`${err.stack}`);

@@ -1,11 +1,10 @@
 const express = require('express');
+
 const router = express.Router();
 
 
-const config = process.env.TEST_CONFIG;
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
