@@ -14,6 +14,7 @@
  */
 console.log('run line router');
 const express = require('express');
+
 const router = express.Router();
 
 
@@ -27,10 +28,24 @@ const lineConfigs = require('../lib/line/lineConfigs');
 
 // init line bot
 const LineBot = require('../lib/line/LineBot');
+
 const lineBot = new LineBot(lineConfigs);
 
-console.log('route post');
-router.post('/callback',
+function lineMiddleWare() {
+  if (process.env.DEBUG) {
+    return (req, res, next) => {
+      next();
+    };
+  }
+  return lineSdk.middleware({
+    channelAccessToken: lineConfigs.channelAccessToken,
+    channelSecret: lineConfigs.channelSecret,
+  });
+}
+
+
+router.post(
+  '/callback',
   // logging post
   (req, res, next) => {
     logger.debug('== POST RECIVED:/bots/line/callback ======================');
@@ -41,31 +56,15 @@ router.post('/callback',
   lineMiddleWare(),
   // handle response
   (req, res) => {
-    const events = req.body.events;
+    const { events } = req.body;
     events.forEach((e) => {
-        lineBot.processLineEvent(e);
-      }
-    );
+      lineBot.processLineEvent(e);
+    });
 
     logger.debug('response with code 200');
     res.send();
-
-  }
+  },
 );
-
-
-function lineMiddleWare() {
-  if (process.env.DEBUG) {
-    return (req, res, next) => {
-      next();
-    }
-  } else {
-    return lineSdk.middleware({
-      channelAccessToken: lineConfigs.channelAccessToken,
-      channelSecret: lineConfigs.channelSecret
-    });
-  }
-}
 
 
 module.exports = router;
