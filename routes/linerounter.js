@@ -23,11 +23,11 @@ const logger = require('../logger');
 
 const lineSdk = require('@line/bot-sdk');
 
-const lineConfig = require('../lib/line/lineconfigs');
+const lineConfigs = require('../lib/line/lineConfigs');
 
 // init line bot
-const LineBot = require('../lib/line/linebot');
-const lineBot = new LineBot(lineConfig);
+const LineBot = require('../lib/line/LineBot');
+const lineBot = new LineBot(lineConfigs);
 
 console.log('route post');
 router.post('/callback',
@@ -61,8 +61,8 @@ function lineMiddleWare() {
     }
   } else {
     return lineSdk.middleware({
-      channelAccessToken: lineConfig.channelAccessToken,
-      channelSecret: lineConfig.channelSecret
+      channelAccessToken: lineConfigs.channelAccessToken,
+      channelSecret: lineConfigs.channelSecret
     });
   }
 }

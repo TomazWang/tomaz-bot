@@ -1,8 +1,8 @@
 // testLineBot.js
 const {expect} = require('chai');
-const ChatMessage = require('../lib/chatbot/chatmessage');
-const ResponseMessage = require('../lib/chatbot/responseMessage');
-const LineBot = require('../lib/line/linebot');
+const ChatMessage = require('../lib/chatbot/ChatMessage');
+const ResponseMessage = require('../lib/chatbot/ResponseMessage');
+const LineBot = require('../lib/line/LineBot');
 const lineBot = new LineBot();
 
 

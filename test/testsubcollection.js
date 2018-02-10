@@ -1,8 +1,8 @@
 // testsubcollection.js
 
-const userDao = require('../lib/db/user/userdao');
-const User = require('../lib/db/user/user');
-const LineProfile = require('../lib/db/user/lineprofile');
+const userDao = require('../lib/db/user/userDao');
+const User = require('../lib/db/user/User');
+const LineProfile = require('../lib/db/user/LineProfile');
 
 const chai = require('chai');
 const expect = chai.expect;
