@@ -1,6 +1,8 @@
 // testLineBot.js
+import { RES_MSG_TYPE_BUTTON } from '../lib/chatbot/messages/ResponseMessage';
+
 const { expect } = require('chai');
-const ResponseMessage = require('../lib/chatbot/messages/ResponseMessage');
+const { ResponseMessage } = require('../lib/chatbot/messages/ResponseMessage');
 const LineBot = require('../lib/line/LineBot');
 const { createButtonContext, createButtonAction } = require('../lib/chatbot/messages/buttonContext');
 
@@ -36,7 +38,7 @@ describe('convertResMsgToBtnTemp()', () => {
       type: actionType,
       actionName,
       label: acitonLable,
-      text
+      text,
     });
 
     const btnContext = createButtonContext({
@@ -44,7 +46,7 @@ describe('convertResMsgToBtnTemp()', () => {
       buttonActions: btnAction,
     });
 
-    const resMsg = new ResponseMessage('', 'buttons', btnContext);
+    const resMsg = new ResponseMessage('', RES_MSG_TYPE_BUTTON, btnContext);
 
     // ACT
     const tempMsg = LineBot.convertResMsgToBtnTemp(resMsg);

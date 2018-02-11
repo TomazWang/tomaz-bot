@@ -3,10 +3,15 @@ const WARN = 1;
 const ERROR = 2;
 
 module.exports = {
-  'extends': 'airbnb-base',
-
+  'extends': 'airbnb/base',
 
   "rules": {
     'max-len': [WARN, 120],
-  }
+    'excludedFiles': [
+      '*.test.js',
+      'test/*',
+      'node_modules/*',
+      'dist/'
+    ]
+  },
 };
