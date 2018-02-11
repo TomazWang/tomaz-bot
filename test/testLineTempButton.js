@@ -36,7 +36,7 @@ describe('createButton()', () => {
     const btn = createButton('message', [action]);
 
     // 3. ASSERT
-    expect(btn).to.have.property('type').that.is.equal('button');
+    expect(btn).to.have.property('type').that.is.equal('buttons');
   });
 
   it('should create a template that contains message', () => {

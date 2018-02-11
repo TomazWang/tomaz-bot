@@ -44,7 +44,7 @@ describe('convertResMsgToBtnTemp()', () => {
       buttonActions: btnAction,
     });
 
-    const resMsg = new ResponseMessage('', 'button', btnContext);
+    const resMsg = new ResponseMessage('', 'buttons', btnContext);
 
     // ACT
     const tempMsg = LineBot.convertResMsgToBtnTemp(resMsg);
