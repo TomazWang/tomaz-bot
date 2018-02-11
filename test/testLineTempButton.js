@@ -27,7 +27,6 @@ describe('createThumbnail()', () => {
   });
 });
 
-
 describe('createButton()', () => {
   it('should create a template that has type = button', () => {
     // 1. ARRANGE DATA
@@ -74,5 +73,6 @@ describe('createButton()', () => {
     // 3. ASSERT
     expect(btn).to.have.property('actions').that.have.lengthOf(2);
   });
+
 });
 

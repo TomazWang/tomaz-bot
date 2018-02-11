@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r babel-register ./bin/www",
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "mocha --require babel-register",
     "build": "babel src -d lib"
   },
   "dependencies": {
