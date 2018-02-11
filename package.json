@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha"
+    "start": "node -r babel-register ./bin/www",
+    "test": "mocha --require babel-register",
+    "build": "babel src -d lib"
   },
   "dependencies": {
     "@line/bot-sdk": "^5.2.0",
@@ -21,7 +22,9 @@
     "serve-favicon": "~2.4.5",
     "uuid": "latest",
     "dotenv": "^4.0.0",
-    "winston": "^3.0.0-rc1"
+    "winston": "^3.0.0-rc1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
   },
   "devDependencies": {
     "babel-preset-airbnb": "^2.4.0",
