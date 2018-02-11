@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha"
+    "start": "node -r babel-register ./bin/www",
+    "test": "mocha --compilers js:babel-core/register",
+    "build": "babel src -d lib"
   },
   "dependencies": {
     "@line/bot-sdk": "^5.2.0",
@@ -24,7 +25,9 @@
     "winston": "^3.0.0-rc1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-env": "^1.6.1",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "eslint": "^4.17.0",
