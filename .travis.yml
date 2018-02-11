@@ -1,10 +1,15 @@
 language: node_js
+
 node_js:
 - 8
+
 install:
 - npm install
+
 script:
+- npm run lint
 - npm test
+
 deploy:
   provider: heroku
   api_key:
@@ -17,5 +22,5 @@ notifications:
   email:
     recipients:
       - TomazWang.tw@gmail.com
-    on_success: always
+    on_success: change
     on_failure: always

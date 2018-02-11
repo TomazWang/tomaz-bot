@@ -1,1 +1,1 @@
-web: node ./bin/www
+web: node -r babel-register ./bin/www
