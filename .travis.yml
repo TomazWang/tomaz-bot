@@ -9,7 +9,6 @@ install:
 
 script:
   - npm run lint
-  - npm test
   - npm run cover
 
 deploy:
