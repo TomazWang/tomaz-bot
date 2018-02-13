@@ -9,7 +9,7 @@ install:
 
 script:
   - npm run lint
-  - npm run cover
+  - npm run test:cover
 
 deploy:
   provider: heroku
